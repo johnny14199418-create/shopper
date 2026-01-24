@@ -22,9 +22,42 @@ Shopper is an open source shopping cart created to demonstrate what students of 
 + Customer Profile Page
 + Address Management
 
+## Requirements
+
++ Ruby (compatible with Rails 3.2.15)
++ PostgreSQL
++ ImageMagick (for image processing with RMagick)
+
 ## Installation
 
 Please see this [playlist](http://www.youtube.com/playlist?list=PLjQo0sojbbxUav7I746f0lT4apGX8-iON) on youtube for tutorial on how to deploy a rails app.
+
+## Setup
+
+1. Clone the repository
+2. Install dependencies:
+   ```
+   bundle install
+   ```
+3. Copy the database configuration:
+   ```
+   cp config/database.yml.example config/database.yml
+   ```
+4. Update `config/database.yml` with your PostgreSQL credentials
+5. Create and setup the database:
+   ```
+   rake db:create db:migrate
+   ```
+6. Start the server:
+   ```
+   rails server
+   ```
+
+## Running Tests
+
+```
+bundle exec rspec
+```
 
 ## Quick Overview
 
@@ -44,5 +77,17 @@ If you would like to see what the shopping cart app looks like watch this video
 + Clean up front end design
 + Some sort of Payment Integration (probably paypal)
 + Use fixtures for tests instead of machinist
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
+
+## License
+
+This project is licensed under the GNU General Public License v2.0 - see the [LICENSE](LICENSE) file for details.
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/codemy/shopper/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
